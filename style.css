@@ -76,6 +76,30 @@ body{
         animation: zoomIn 0.3s ease;
     }
 }
+@media screen and (max-width: 800px) {
+  body{
+    padding: 5vh 20px;
+  }
+    .container{
+        display: grid;
+        grid-template-columns: 80px 125px 125px;
+        grid-template-rows: 90px 175px 175px 175px 175px;
+        gap: 15px;
+        .box-grid{
+          border-radius: 15px;
+            .content-box{
+                
+            }
+        }
+    }
+    .modal-content {
+        display: block;
+        margin: 5% auto;
+        max-width: 30% !important;
+        border-radius: 15px;
+        animation: zoomIn 0.3s ease;
+    }
+}
 .modal {
   display: none; /* Ẩn mặc định */
   position: fixed;
