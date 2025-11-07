@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid layout</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="box-grid" style="grid-area: box-1;">
+            <img loading="lazy" src="pic-1.jpg" alt="">
+        </div>
+
+        <div class="box-grid" style="grid-area: box-2;">
+            <div class="content-box">My Album</div>
+        </div>
+        
+        <div class="box-grid" style="grid-area: box-3;">
+            <img loading="lazy" src="pic-4.jpg" alt="">
+        </div>
+
+        <div class="box-grid" style="grid-area: box-4;">
+            <img loading="lazy" src="pic-3.jpg" alt="">
+        </div>
+
+        <div class="box-grid" style="grid-area: box-5;">
+            <img loading="lazy" src="pic-2.jpg" alt="">
+        </div>
+
+        <div class="box-grid spec" style="grid-area: box-6;">
+            <img loading="lazy" src="pic-6.jpg" alt="">
+        </div>
+
+        <div class="box-grid" style="grid-area: box-7;">
+            <img loading="lazy" src="pic-5.jpg" alt="">
+        </div>
+
+        <div class="box-grid" style="grid-area: box-8;">
+            <img loading="lazy" src="pic-7.jpg" alt="">
+        </div>
+
+        <div class="box-grid spec" style="grid-area: box-9;">
+            <img loading="lazy" src="pic-8.jpg" alt="">
+        </div>
+    </div>
+
+    <!-- Modal -->
+<div id="imgModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="modalImg">
+  <div id="caption"></div>
+</div>
+
+<script>
+  const modal = document.getElementById("imgModal");
+  const modalImg = document.getElementById("modalImg");
+  const caption = document.getElementById("caption");
+  const closeBtn = document.getElementsByClassName("close")[0];
+
+  // chọn tất cả ảnh trong .box-grid
+  const imgs = document.querySelectorAll(".box-grid img");
+
+  imgs.forEach(img => {
+    img.addEventListener("click", () => {
+      modal.style.display = "block";
+      modalImg.src = img.src;
+      caption.innerText = img.alt || "";
+    });
+  });
+
+  closeBtn.onclick = function() {
+    modal.style.display = "none";
+  }
+
+  window.onclick = function(e) {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  }
+</script>
+
+
+</body>
+</html>
