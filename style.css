@@ -57,6 +57,9 @@ body{
 }
 
 @media screen and (max-width: 1300px) {
+  body{
+    padding: 10vh 30px;
+  }
     .container{
         display: grid;
         grid-template-columns: 200px 250px 150px;
@@ -95,7 +98,7 @@ body{
     .modal-content {
         display: block;
         margin: 5% auto;
-        max-width: 30% !important;
+        max-width: 50% !important;
         border-radius: 15px;
         animation: zoomIn 0.3s ease;
     }
